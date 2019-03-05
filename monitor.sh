@@ -51,7 +51,24 @@ push_mem_data(){
 	curl -i -XPOST 'http://141.223.82.62:8086/write?db=testdb' --data-binary "$mem_workingset_body"
 }
 
-#push_diskio
+push_io_data(){
+	local diskio_length=$( cat $1 | jq '.diskio' | jq length )
+	
+	for ((i=0;i<diskio_length;i++));do
+		local io_device=$( cat $1 | jq ".diskio[$i].device" )
+		local io_read=$( cat $1 | jq ".diskio[$i].stats.Read" )
+		local io_write=$( cat $1 | jq ".diskio[$i].stats.Write" )
+		local io_total=$( cat $1 | jq ".diskio[$i].stats.Total" )
+
+		local io_read_body="io_read,container=$3,device=$io_device value=$io_read $2"
+                local io_write_body="io_write,container=$3,device=$io_device value=$io_write $2"
+		local io_total_body="io_write,container=$3,device=$io_device value=$io_total $2"
+
+                curl -i -XPOST 'http://141.223.82.62:8086/write?db=testdb' --data-binary "$io_read_body"
+                curl -i -XPOST 'http://141.223.82.62:8086/write?db=testdb' --data-binary "$io_write_body"
+		curl -i -XPOST 'http://141.223.82.62:8086/write?db=testdb' --data-binary "$io_total_body"
+	done
+}
 
 
 push_fs_data(){
@@ -62,8 +79,8 @@ push_fs_data(){
         	local fs_capacity=$( cat $1 | jq ".filesystem[$i].capacity" )
         	local fs_usage=$( cat $1 | jq ".filesystem[$i].usage" )
 
-		local fs_capacity_body="fs_capacity,container=$3 value=$fs_capacity $2"
-        	local fs_usage_body="fs_usage,container=$3 value=$fs_usage $2"
+		local fs_capacity_body="fs_capacity,container=$3,device=$device value=$fs_capacity $2"
+        	local fs_usage_body="fs_usage,container=$3,device=$device value=$fs_usage $2"
 		
         	curl -i -XPOST 'http://141.223.82.62:8086/write?db=testdb' --data-binary "$fs_capacity_body"
         	curl -i -XPOST 'http://141.223.82.62:8086/write?db=testdb' --data-binary "$fs_usage_body"
@@ -112,7 +129,7 @@ push_data(){
 	container=$( awk -F. '{print $1}' <<<"$1")
 	push_cpu_data "$1" "$2" "$container"
 	push_mem_data "$1" "$2" "$container"
-	#diskio
+	push_io_data "$1" "$2" "$container"
         push_fs_data "$1" "$2" "$container"
 	push_network_data "$1" "$2" "$container"
 }
