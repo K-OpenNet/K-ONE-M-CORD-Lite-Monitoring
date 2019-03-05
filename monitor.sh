@@ -123,9 +123,9 @@ tmp_traffic_stamp=0
 
 for ((;;))
 do
-	curl -X GET http://141.223.82.62:8080/api/v2.0/stats/cp?type=docker | jq '(."/docker/f15e2c490dac7190c94f85b890cb8fcff901a6eef23f1803345d25b3817ccb4b"| reverse)[0] | {timestamp: .timestamp, cpu: .cpu, memory: .memory, filesystem: .filesystem, network: .network.interfaces}' > cp.stats
-	curl -X GET http://141.223.82.62:8080/api/v2.0/stats/dp?type=docker | jq '(."/docker/13fc681477ce056812b43a97a5837fcddef94b047d3d746d649ed16dcb276f76"| reverse)[0] | {timestamp: .timestamp, cpu: .cpu, memory: .memory, filesystem: .filesystem, network: .network.interfaces}' > dp.stats
-	curl -X GET http://141.223.82.62:8080/api/v2.0/stats/traffic?type=docker | jq '(."/docker/4886476c5bc5cf16105ea7a405c1a51a676e47c3175fe6b0cca59e8e17c5f6c2"| reverse)[0] | {timestamp: .timestamp, cpu: .cpu, memory: .memory, filesystem: .filesystem, network: .network.interfaces}' > traffic.stats
+	curl -X GET http://141.223.82.62:8080/api/v2.0/stats/cp?type=docker | jq '(."/docker/f15e2c490dac7190c94f85b890cb8fcff901a6eef23f1803345d25b3817ccb4b"| reverse)[0] | {timestamp: .timestamp, cpu: .cpu, memory: .memory, diskio: .diskio.io_service_bytes, filesystem: .filesystem, network: .network.interfaces}' > cp.stats
+	curl -X GET http://141.223.82.62:8080/api/v2.0/stats/dp?type=docker | jq '(."/docker/13fc681477ce056812b43a97a5837fcddef94b047d3d746d649ed16dcb276f76"| reverse)[0] | {timestamp: .timestamp, cpu: .cpu, memory: .memory, diskio: .diskio.io_service_bytes, filesystem: .filesystem, network: .network.interfaces}' > dp.stats
+	curl -X GET http://141.223.82.62:8080/api/v2.0/stats/traffic?type=docker | jq '(."/docker/4886476c5bc5cf16105ea7a405c1a51a676e47c3175fe6b0cca59e8e17c5f6c2"| reverse)[0] | {timestamp: .timestamp, cpu: .cpu, memory: .memory, diskio: .diskio.io_service_bytes, filesystem: .filesystem, network: .network.interfaces}' > traffic.stats
 
 	cp_timestamp=$( get_unixtime "cp.stats" )	
 	if [ $cp_timestamp -ne "$tmp_cp_stamp" ];then
