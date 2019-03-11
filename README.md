@@ -2,7 +2,7 @@
 
 Note that
 * containers of M-CORD Lite are implemented by [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite)
-* containers of database and dashboard are implemented by influxDB and Grafana
+* influxDB container for time-series database and Grafana container for dashboard are used
 * monitor contianer and shell scripts are implemented by Jibum Hong @ POSTECH
 
 
