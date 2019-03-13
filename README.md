@@ -9,7 +9,7 @@ Note that
 ## Specification
 * OS: Ubuntu 16.04 (Fin to test) and 18.04 (under test)
 * CPU: Intel CPU (More than Haswell CPU microarchitecture)
-* Memory: 16GB
+* Memory: more than 16GB
 
 ## Set-up environment
 
