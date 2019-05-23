@@ -1,12 +1,12 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -y curl
-RUN apt-get install -y openjdk-8-jre
-RUN apt-get install -y openjdk-8-jdk
-RUN apt-get install -y vim
+RUN apt-get install -y curl openjdk-8-jre openjdk-8-jdk vim jq
+
+VOLUME ["/data"]
 
 CMD ["/bin/bash"]
+
 
 EXPOSE 9999
 EXPOSE 9998
