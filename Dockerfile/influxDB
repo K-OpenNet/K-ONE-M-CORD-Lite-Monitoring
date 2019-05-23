@@ -1,0 +1,7 @@
+FROM influxdb:latest
+
+RUN apt-get update
+
+EXPOSE 8086
+EXPOSE 8083
+EXPOSE 2003
