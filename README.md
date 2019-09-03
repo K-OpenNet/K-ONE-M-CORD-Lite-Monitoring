@@ -7,7 +7,7 @@ Note that
 
 
 ## Specification
-* OS: Ubuntu 16.04 (Fin to test) and 18.04 (under test)
+* OS: Ubuntu 16.04 and 18.04
 * CPU: Intel CPU (More than Haswell CPU microarchitecture)
 * Memory: more than 16GB
 
@@ -28,6 +28,16 @@ If you can see the group `docker`, everything looks good!
 **NOTE: If you install [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite), you don't need to this process.**
 
 
+## Install
+
+### 1. Download and run node-exporter and cAdvisor
+```
+node$ ./set_each_node.sh
+```
+* cAdvisor for container resource usage monitoring
+* node-exporter for PM resource usage monitoring 
+
+
 ### 2. Configure prometheus configuration files
 * Go to `conf/prometheus.yml` and change `<IP_number>` to node IP addresses running node-exporter
 * Go to `conf/prometheus-cadvisor.yml` and change `<IP_number>` to node IP addresses running cAdvisor
@@ -46,7 +56,8 @@ node$ ./set_grafana.sh
 ```
 
 you can access to grafana web dashboard `<IP_number>:3000`
-initial id : admin / pw : pass
+
+**initial id : admin / pw : pass**
 
 
 ## Release information
