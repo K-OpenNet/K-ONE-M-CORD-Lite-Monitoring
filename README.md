@@ -25,7 +25,7 @@ node$ groups
 ```
 If you can see the group `docker`, everything looks good!
 
-**NOTE: If you install [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite), you don't need to this process.
+**NOTE: If you install [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite), you don't need to this process.**
 
 
 ## Release information
