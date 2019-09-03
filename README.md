@@ -11,9 +11,22 @@ Note that
 * CPU: Intel CPU (More than Haswell CPU microarchitecture)
 * Memory: more than 16GB
 
-## Set-up environment
+## Preliminaries
+
+### 1. Need to install Docker engine
+```
+node$ ./set_env.sh
+```
+
+**NOTE: To make sure that the user is in the `docker` group, please log off and then log in again. You can check which groups belong to the user with the below command.**
+
+```
+node$ groups
+```
+If you can see the group `docker`, everything looks good!
+
 
 
 ## Release information
-* Release 1 - single PM version
-* Release 2 - multi-PM version (TBD)
+* Release 1 - Monitoring system resource metrics of each containers in EPC
+* Release 2 - Monitoring network statistics of internal link in EPC
