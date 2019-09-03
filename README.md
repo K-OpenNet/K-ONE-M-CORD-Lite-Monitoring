@@ -8,8 +8,9 @@ Note that
 
 ## Specification
 * OS: Ubuntu 16.04 and 18.04
-* CPU: Intel CPU (More than Haswell CPU microarchitecture)
-* Memory: more than 16GB
+* Docker version 18.09.7
+* Prometheus version 1.7.0
+
 
 ## Preliminaries
 
