@@ -27,6 +27,14 @@ If you can see the group `docker`, everything looks good!
 
 **NOTE: If you install [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite), you don't need to this process.**
 
+
+### 3. Download and run Prometheus for node-exporter and cAdvisor
+```
+node$ ./set_prom.sh
+```
+The role of InfluxDB was replaced to Prometheus TSDB for compatibility.
+
+
 ### 4. Download and run Grafana
 ```
 node$ ./set_grafana.sh
