@@ -28,6 +28,11 @@ If you can see the group `docker`, everything looks good!
 **NOTE: If you install [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite), you don't need to this process.**
 
 
+### 2. Configure prometheus configuration files
+* Go to `conf/prometheus.yml` and change `<IP_number>` to node IP addresses running node-exporter
+* Go to `conf/prometheus-cadvisor.yml` and change `<IP_number>` to node IP addresses running cAdvisor
+
+
 ### 3. Download and run Prometheus for node-exporter and cAdvisor
 ```
 node$ ./set_prom.sh
@@ -40,7 +45,7 @@ The role of InfluxDB was replaced to Prometheus TSDB for compatibility.
 node$ ./set_grafana.sh
 ```
 
-you can access to grafana web dashboard **host_ip:3000**
+you can access to grafana web dashboard `<IP_number>:3000`
 initial id : admin / pw : pass
 
 
