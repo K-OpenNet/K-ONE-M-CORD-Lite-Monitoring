@@ -32,6 +32,7 @@ If you can see the group `docker`, everything looks good!
 node$ ./set_grafana.sh
 ```
 
+you can access to grafana web dashboard **host_ip:3000**
 initial id : admin / pw : pass
 
 
