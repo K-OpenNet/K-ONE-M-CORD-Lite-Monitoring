@@ -5,13 +5,12 @@ from scapy.contrib import gtp_v2
 
 from collections import Counter
 from time import time
-#import time
 from influxdb import InfluxDBClient
 
-brs11 = "br-e16da23368de" #brs11
-brs1u = "br-17ed1485facc"
-brspgw = "br-0fa654a0c8d6"
-brsgi = "br-7decab26cfd4"
+brs11 = "" #brs11 link id
+brs1u = "" #brs1u link id 
+brspgw = "" #brspgw link id
+brsgi = "" #brsgi link id
 
 packet_counts = Counter()
 packet_bytes = {}
