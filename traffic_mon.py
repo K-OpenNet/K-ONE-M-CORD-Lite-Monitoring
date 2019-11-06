@@ -297,13 +297,16 @@ while True:
 	#sniff packetsv
 	pkts=sniff(iface=[brs11,brs1u,brsgi,brspgw], filter="ip", prn=parsing, timeout=10)
 	#push_data to influx db
-	#print(str(int(time())))
+        #normal packets
 	push_data(packet_counts,"packet_counts")
 	push_data(packet_bytes,"packet_bytes")
 	
+        #aggregates traffic by each ue
 	push_imsi_data(imsi_counts,"imsi_counts")
 	push_imsi_data(imsi_bytes,"imsi_bytes")
 	
+        #aggregates traffic by each teid
+        #needs to map imsi - teid
 	push_teid_data(teid_counts,"teid_counts")
 	push_teid_data(teid_bytes,"teid_bytes")
 
