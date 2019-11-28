@@ -10,8 +10,10 @@ Note that
 * OS: Ubuntu 16.04 and 18.04
 * Docker version 18.09.7
 * Prometheus version 1.7.0
-* InfluxDB version 1.7.9
 * Grafana version 4.4.5
+* InfluxDB version 1.7.9
+* Scapy version 2.3.3
+
 
 ## Preliminaries
 
