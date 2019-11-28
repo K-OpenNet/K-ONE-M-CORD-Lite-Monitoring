@@ -3,6 +3,7 @@
 Note that
 * containers of M-CORD Lite are implemented by [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite)
 * influxDB container for time-series database and Grafana container for dashboard are used
+* Scapy for monitoring network traffic statistics 
 * monitor contianer and shell scripts are implemented by Jibum Hong @ POSTECH
 
 
