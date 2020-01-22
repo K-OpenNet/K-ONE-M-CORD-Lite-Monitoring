@@ -1,4 +1,4 @@
-# Anomaly Detection using K-ONE-M-CORD Monitoring
+# Anomaly Detection using K-ONE M-CORD Lite Monitoring
 
 Note that
 * containers of M-CORD Lite are implemented by [K-ONE M-CORD Lite](https://github.com/K-OpenNet/K-ONE-M-CORD-Lite)
