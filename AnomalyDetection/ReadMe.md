@@ -13,4 +13,4 @@ Note that
 ## Install
 
 ## Release information
-* Release 1 - M-CORD Lite Anomaly Detection using ML-based module
+* Release 1 - M-CORD Lite VNF Anomaly Detection using ML-based module
