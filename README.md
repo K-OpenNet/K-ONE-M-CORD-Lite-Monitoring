@@ -35,7 +35,7 @@ If you can see the group `docker`, everything looks good!
 
 ## Install
 
-### 1. Download and run node-exporter and cAdvisor
+### 1. Download and run node-exporter and cAdvisor (Compute Nodes)
 ```
 node$ ./set_each_node.sh
 ```
@@ -43,19 +43,19 @@ node$ ./set_each_node.sh
 * node-exporter for PM resource usage monitoring 
 
 
-### 2. Configure prometheus configuration files
+### 2. Configure prometheus configuration files (Control Node)
 * Go to `conf/prometheus.yml` and change `<IP_number>` to node IP addresses running node-exporter
 * Go to `conf/prometheus-cadvisor.yml` and change `<IP_number>` to node IP addresses running cAdvisor
 * Go to `conf/prometheus-collectd.yml` and change `<IP_number>` to node IP addresses running collectd
 
-### 3. Download and run Prometheus for node-exporter and cAdvisor
+### 3. Download and run Prometheus for node-exporter, cAdvisor, and collectd (Control Node)
 ```
 node$ ./set_prom.sh
 ```
 The role of InfluxDB was replaced to Prometheus TSDB for compatibility.
 
 
-### 4. Download and run Grafana
+### 4. Download and run Grafana (Control Node)
 ```
 node$ ./set_grafana.sh
 ```
