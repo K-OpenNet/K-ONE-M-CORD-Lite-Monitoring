@@ -64,6 +64,15 @@ you can access to grafana web dashboard `<IP_number>:3000`
 
 **initial id : admin / pw : pass**
 
+* Go to "Settings -> Data sources", and Add data sources for node-exporter, cadvisor, and collectd
+"""
+Name: prom-cadvisor / prom-exporter / prom-collectd
+URL: http://prometheus-cadvisor:9090 / http://prometheus:9090 / http://prometheus-collectd:9090
+Scrape interval: 1s
+HTTP Method: GET
+"""
+
+* Go to "Create -> Import", and paste node-exporter.json and cadvisor.json
 
 ## Release information
 * Release 1 - Monitoring system resource metrics of each containers in EPC
