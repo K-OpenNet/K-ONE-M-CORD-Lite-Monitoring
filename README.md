@@ -46,7 +46,7 @@ node$ ./set_each_node.sh
 ### 2. Configure prometheus configuration files
 * Go to `conf/prometheus.yml` and change `<IP_number>` to node IP addresses running node-exporter
 * Go to `conf/prometheus-cadvisor.yml` and change `<IP_number>` to node IP addresses running cAdvisor
-
+* Go to `conf/prometheus-collectd.yml` and change `<IP_number>` to node IP addresses running collectd
 
 ### 3. Download and run Prometheus for node-exporter and cAdvisor
 ```
