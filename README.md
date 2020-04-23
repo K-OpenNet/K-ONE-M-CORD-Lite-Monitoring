@@ -78,4 +78,4 @@ HTTP Method: GET
 ## Release information
 * Release 1 - Monitoring system resource metrics of each containers in EPC
 * Release 2 - Monitoring network statistics of internal link in EPC
-* Release 3 - Anomaly Detection using Monitoring System (TBD)
+* Release 3 - Anomaly Detection using Monitoring System
