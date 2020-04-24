@@ -14,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker run -d -p 9100:9100 --name node-exporter prom/node-exporter:v0.14.0
+docker run -d -p 9100:9100 --name node-exporter prom/node-exporter:v0.18.1
 
 docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=8080:8080 --detach=true --name=cadvisor google/cadvisor:latest --allow_dynamic_housekeeping=false --housekeeping_interval=1s --max_housekeeping_interval=5s
 
+docker pull prom/collectd-exporter
+docker run -d -p 9103:9103 -p 25826:25826/udp prom/collectd-exporter --collectd.listen-address=":25826"
