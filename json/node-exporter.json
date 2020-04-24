@@ -36,7 +36,7 @@
     }
   ],
   "id": null,
-  "title": "Node exporter single server",
+  "title": "Node exporter",
   "description": "Dashboard to get an overview of one server",
   "tags": [
     "prometheus"
